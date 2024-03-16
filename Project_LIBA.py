@@ -70,7 +70,7 @@ st.title('Machine Learning Input App')
 
 
 
-X = df[['GeneralHealth','SleepHours','RemovedTeeth','HadDiabetes','DifficultyWalking','SmokerStatus','WeightInKilograms']]
+X = df[['HadAngina','SleepHours','HadStroke','AgeCategory','DifficultyWalking','SmokerStatus','WeightInKilograms']]
 y = df[['HadHeartAttack']]
 class_names = df[['HadHeartAttack']]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
@@ -85,18 +85,18 @@ dt_classifier.fit(X_train, y_train)
 
 # Function to get user input
 def get_user_input():
-    GeneralHealth = st.text_input(' GeneralHealth Enter 0 or 1')
+    HadAngina = st.text_input(' HadAngina Enter 0 or 1')
     SleepHours = st.text_input('Enter sleephours','0')
-    RemovedTeeth = st.text_input('RemovedTeeth Enter 0 or 1')
-    HadDiabetes = st.text_input('HadDiabetes Enter 0 or 1')
+    HadStroke = st.text_input('HadStroke Enter 0 or 1')
+    AgeCategory = st.text_input('AgeCategory')
     DifficultyWalking = st.text_input(' DifficultyWalking Enter 0 or 1')
     SmokerStatus = st.text_input('SmokerStatus Enter 0 or 1')
     WeightInKilograms = st.text_input('WeightInKilograms','0')
-    SleepHours = float(SleepHours)
-    data = {'GeneralHealth': str(GeneralHealth),
+
+    data = {'HadAngina': str(HadAngina),
             'SleepHours': float(SleepHours),
-            'RemovedTeeth': str(RemovedTeeth),
-            'HadDiabetes': str(HadDiabetes),
+            'HadStroke': str(HadStroke),
+            'AgeCategory': str(AgeCategory),
             'DifficultyWalking':str(DifficultyWalking),
             'SmokerStatus': str(SmokerStatus),
             'WeightInKilograms': float(WeightInKilograms)}
@@ -108,6 +108,12 @@ def get_user_input():
 def main():
 
     st.title("Heart Attack Prediction")
+    with st.sidebar:
+            st.write("Instruction to enter the data")
+            st.write("Hadangina",":" ,"HadStroke",":" ,"DifficultyWalking",":::", "No",":","0","-","Yes",":","1")
+            st.write("SmokerStatus",":","Current smoker - now smokes every day",":","0","-","Current smoker - now smokes some days",":","1","-","Former smoker",":","2","-","Never smoked",":","3")
+            st.write("AgeCategory",":","18 to 24",":","0","-","25 to 29",":","1","-","30 to 34",":","2","-","35 to 39",":","3","-","40 to 44",":","4","-","45 to 49",":","5","-","50 to 54",":","6","-","55 to 59",":","7","-","60 to 64",":","8","-","65 to 69",":","9","-","70 to 74",":","10","-","75 to 79",":","11","-","80orolder",":","12")
+
     user_input = get_user_input()
     st.write(user_input)
     if st.button("Predict"):
