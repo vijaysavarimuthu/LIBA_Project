@@ -30,7 +30,7 @@ pd.set_option('display.max_columns',None)
 #----------------------------------------------------------------------------------------------
 #Reading CSV File
 
-df = pd.read_csv(r"C:\Users\Gladis M\VSCODEREPO\LIBA_Project-1\heart_2022_with_nans.csv")
+df = pd.read_csv(r"C:\Users\Gladis M\VSCODEREPO\LIBA_Project\heart_2022_with_nans.csv")
 
 #----------------------------------------------------------------------------------------------
 
