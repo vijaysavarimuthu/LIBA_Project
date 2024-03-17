@@ -42,7 +42,7 @@ duplicated=df.duplicated()
 
 #----------------------------------------------------------------------------------
 #READING THE DATASET
-df = pd.read_csv(r"C:\Users\Gladis M\Desktop\anand temp\LIBA-DS\Project\heart_2022_with_nans.csv")
+df = pd.read_csv("heart_2022_with_nans.csv")
 #datasets.head()
 #------------------------------------------------------------------------------------
 #FILL MISSING VALUES
