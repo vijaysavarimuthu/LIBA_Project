@@ -19,7 +19,6 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import RobustScaler
 from sklearn import preprocessing
 from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
-import seaborn as sns
 from sklearn.metrics import precision_score,recall_score
 import os
 import warnings
