@@ -7,6 +7,7 @@ from sklearn.gaussian_process import GaussianProcessClassifier
 from sklearn.gaussian_process.kernels import RBF
 from sklearn.inspection import DecisionBoundaryDisplay
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC, LinearSVC
 from sklearn.neighbors import KNeighborsClassifier
@@ -40,6 +41,7 @@ duplicated=df.duplicated()
 
 #---------------------------------------------------------------------------------------------
 
+#----------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------------
 #FILL MISSING VALUES
@@ -72,7 +74,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 # rf_classifier.fit(X_train, y_train)
 
 # Create a Decision Tree classifier
-dt_classifier = DecisionTreeClassifier(random_state=42)
+dt_classifier = LogisticRegression()
 
 # Train the classifier on the training data
 dt_classifier.fit(X_train, y_train)
